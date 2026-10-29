@@ -1,0 +1,82 @@
+body {
+            font-family: 'Hind Siliguri', 'Noto Sans JP', sans-serif;
+            background: linear-gradient(135deg, #fff0f5 0%, #e6e6fa 50%, #f0f8ff 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Floating Sakura Petals Animation */
+        .sakura-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .petal {
+            position: absolute;
+            background: radial-gradient(circle, #ffb7c5 0%, #ff9ebb 100%);
+            border-radius: 150% 0 150% 0;
+            opacity: 0.7;
+            animation: fall 10s infinite linear;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translate(0, -10px) rotate(0deg);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translate(100px, 100vh) rotate(360deg);
+                opacity: 0.2;
+            }
+        }
+
+        /* Custom Glassmorphism */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 8px 32px 0 rgba(230, 73, 128, 0.1);
+        }
+
+        /* 3D Flip Card Effect */
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+        .transform-style-3d {
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .backface-hidden {
+            backface-visibility: hidden;
+        }
+        .rotate-y-180 {
+            transform: rotateY(180deg);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #ffe3ec;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f06595;
+            border-radius: 10px;
+        }
+    
+        .scrollbar-none{scrollbar-width:none;-ms-overflow-style:none}
+        .scrollbar-none::-webkit-scrollbar{display:none}
+        .kcanvas{touch-action:none}
+        .blur-m{filter:blur(6px);cursor:pointer}
+        @keyframes shk{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+        .shk{animation:shk .3s}
+        @media (max-width:640px){::-webkit-scrollbar{width:3px;height:3px}}

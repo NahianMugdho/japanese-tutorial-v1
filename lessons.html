@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NHK পাঠ – সহজে জাপানি শিখুন</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="text-slate-800 relative font-bengali" data-page="lessons">
+    <div class="sakura-container" id="sakuraContainer"></div>
+    <div class="relative z-10 flex flex-col min-h-screen" id="pageWrap">
+        <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+<section id="tab-lessons" class="space-y-6">
+                <div class="glass-card p-5 sm:p-6 rounded-2xl border border-sakura-200 space-y-3">
+                    <h2 class="text-xl sm:text-2xl font-bold text-slate-800">সহজে জাপানি ভাষা (NHK Lesson Modules)</h2>
+                    <p class="text-slate-600 text-sm">
+                        ভিয়েতনাম থেকে আসা শিক্ষার্থী তাম (Tam), হারু-সান (Haru-san), আয়াকা (Ayaka) এবং কাইতো (Kaito)-র রিয়েল-লাইফ কথোপকথন থেকে প্রয়োজনীয় বাক্য শিখুন।
+                    </p>
+                    <div class="flex items-center justify-between text-xs font-bold text-slate-500"><span>অগ্রগতি</span><span id="lessonProgText"></span></div>
+                    <div class="h-2.5 rounded-full bg-sakura-100 overflow-hidden"><div id="lessonProgBar" class="h-full bg-gradient-to-r from-sakura-500 to-sakura-300 transition-all duration-500" style="width:0%"></div></div>
+                </div>
+
+                <div class="flex overflow-x-auto space-x-3 pb-2 scrollbar-none" id="lessonPills"></div>
+
+                <div id="lessonContent" class="glass-card p-5 sm:p-6 rounded-2xl border border-sakura-200 space-y-6"></div>
+            </section>
+        </main>
+    </div>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/lessons.js"></script>
+</body>
+</html>

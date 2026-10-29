@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>মনে রাখার গেম – সহজে জাপানি শিখুন</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="text-slate-800 relative font-bengali" data-page="games">
+    <div class="sakura-container" id="sakuraContainer"></div>
+    <div class="relative z-10 flex flex-col min-h-screen" id="pageWrap">
+        <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+<section id="tab-games" class="space-y-6">
+    <div class="glass-card p-5 sm:p-6 rounded-2xl border border-sakura-200 space-y-4">
+        <div class="flex flex-wrap items-start justify-between gap-4">
+            <div class="min-w-0">
+                <h2 class="text-xl sm:text-2xl font-bold text-slate-800">🎮 মনে রাখার গেম (Memory Games)</h2>
+                <p class="text-slate-600 text-sm mt-1">খেলতে খেলতেই সব মনে থাকবে। যেসব অক্ষর-শব্দে ভুল করবেন, সেগুলো আপনা-আপনি বেশি করে ফিরে আসবে।</p>
+            </div>
+            <div class="grid grid-cols-4 gap-2 text-center w-full sm:w-auto">
+                <div class="px-3 py-2 rounded-xl bg-white border border-sakura-200"><div class="text-lg font-extrabold text-sakura-600" id="stXP">0</div><div class="text-[10px] font-bold text-slate-500">⭐ XP</div></div>
+                <div class="px-3 py-2 rounded-xl bg-white border border-sakura-200"><div class="text-lg font-extrabold text-sakura-600" id="stLv">1</div><div class="text-[10px] font-bold text-slate-500">স্তর</div></div>
+                <div class="px-3 py-2 rounded-xl bg-white border border-sakura-200"><div class="text-lg font-extrabold text-amber-600" id="stStreak">0</div><div class="text-[10px] font-bold text-slate-500">🔥 দিন</div></div>
+                <div class="px-3 py-2 rounded-xl bg-white border border-sakura-200"><div class="text-lg font-extrabold text-rose-500" id="stWeak">0</div><div class="text-[10px] font-bold text-slate-500">😅 দুর্বল</div></div>
+            </div>
+        </div>
+        <div><div class="h-2.5 rounded-full bg-sakura-100 overflow-hidden"><div id="lvBar" class="h-full bg-gradient-to-r from-sakura-500 to-sakura-300 transition-all duration-500" style="width:0%"></div></div><p id="lvText" class="text-[11px] text-slate-500 font-semibold mt-1"></p></div>
+    </div>
+
+    <div id="hub" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+    <div id="gameArea" class="hidden space-y-4">
+        <div class="flex items-center justify-between gap-3">
+            <button onclick="Games.close()" class="px-4 py-2 rounded-xl bg-white border border-sakura-200 text-slate-700 hover:bg-sakura-50 text-sm font-semibold transition"><i class="fa-solid fa-arrow-left mr-1"></i> সব গেম</button>
+            <h3 id="gameTitle" class="text-lg sm:text-xl font-bold text-slate-800"></h3>
+            <button onclick="Games.restart()" class="px-4 py-2 rounded-xl bg-white border border-sakura-200 text-slate-700 hover:bg-sakura-50 text-sm font-semibold transition"><i class="fa-solid fa-rotate-right mr-1"></i></button>
+        </div>
+        <div id="poolBar" class="flex overflow-x-auto gap-2 pb-1 scrollbar-none"></div>
+        <div id="gameBody"></div>
+    </div>
+
+    <div class="glass-card p-5 sm:p-6 rounded-2xl border border-sakura-200 space-y-3">
+        <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2"><i class="fa-solid fa-brain text-sakura-500"></i> সহজে মনে রাখার ৫টি কৌশল</h3>
+        <ul class="text-sm text-slate-700 space-y-2 list-disc pl-5">
+            <li><b>শুনুন + বলুন + লিখুন:</b> একসঙ্গে তিনটি ইন্দ্রিয় ব্যবহার করলে মস্তিষ্কে গেঁথে যায়। প্রতিটি অক্ষর ক্লিক করে শুনুন, জোরে বলুন, তারপর ক্যানভাসে লিখুন।</li>
+            <li><b>ছোট ছোট সেশন:</b> রোজ ১০–১৫ মিনিট খেললে একদিনে ২ ঘণ্টা পড়ার চেয়ে অনেক বেশি মনে থাকে।</li>
+            <li><b>ভুলগুলোই সোনা:</b> ভুল করা আইটেম এখানে বেশি করে ফিরে আসে। "দুর্বল রিভিউ" রোজ একবার খেলুন।</li>
+            <li><b>বাংলার সঙ্গে মিলান:</b> জাপানি বাক্যক্রম বাংলার মতোই (কর্তা → কর্ম → ক্রিয়া), আর কণাগুলো বাংলা বিভক্তির মতো।</li>
+            <li><b>ধারাবাহিকতা:</b> 🔥 স্ট্রিক ভাঙবেন না। প্রতিদিন অন্তত একটি গেম খেলুন।</li>
+        </ul>
+    </div>
+</section>
+        </main>
+    </div>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/games.js"></script>
+</body>
+</html>

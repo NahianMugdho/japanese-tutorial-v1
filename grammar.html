@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ব্যাকরণ ও বাক্যরীতি – সহজে জাপানি শিখুন</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="text-slate-800 relative font-bengali" data-page="grammar">
+    <div class="sakura-container" id="sakuraContainer"></div>
+    <div class="relative z-10 flex flex-col min-h-screen" id="pageWrap">
+        <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+<section id="tab-grammar" class="space-y-6">
+                <div class="glass-card p-5 sm:p-6 rounded-2xl border border-sakura-200">
+                    <h2 class="text-xl sm:text-2xl font-bold text-slate-800">জাপানি ব্যাকরণ ও বাক্যরীতি (Grammar & Sentence Pattern)</h2>
+                    <p class="text-slate-600 text-sm mt-1">
+                        জাপানি ভাষার প্রধান পার্টিকেল (Particles) এবং ইন্টারেক্টিভ সেন্টেন্স বিল্ডার দিয়ে নিজে নিজে বাক্য তৈরি করুন।
+                    </p>
+                </div>
+
+                <div class="glass-card p-5 sm:p-6 rounded-2xl border border-sakura-200 space-y-3">
+                    <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2"><i class="fa-solid fa-lightbulb text-sakura-500"></i> ব্যাকরণ সারসংক্ষেপ</h3>
+                    <ul class="text-sm text-slate-700 space-y-2 list-disc pl-5">
+                        <li><b>বাক্যক্রম:</b> কর্তা → কর্ম → ক্রিয়া। আমি <i>ভাত খাই</i> = ওয়াতাশি ওয়া <i>গোহান ও তাবেমাস</i>। বাংলার মতোই!</li>
+                        <li><b>কণা (বাংলায় বিভক্তির মতো):</b> は = প্রসঙ্গ, が = কর্তা, を = কর্ম, の = এর, に = এ/দিকে, か = প্রশ্ন, も = ও।</li>
+                        <li><b>ক্রিয়ার রূপ:</b> ます (ভদ্র) → ません (না) → ました (অতীত) → て (সংযোগ) → た (সাধারণ অতীত) → ない (না-বাচক)।</li>
+                        <li><b>বিশেষণ:</b> い-বিশেষণ (新しい) ও な-বিশেষণ (好きな)। অতীতে い → かった।</li>
+                    </ul>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="particleGrid"></div>
+
+                <div class="glass-card p-5 sm:p-6 rounded-2xl border border-sakura-200 space-y-4">
+                    <div class="flex justify-between items-center gap-2">
+                        <h3 class="text-base sm:text-lg font-bold text-slate-800 flex items-center gap-2">
+                            <i class="fa-solid fa-puzzle-piece text-sakura-500"></i> ইন্টারেক্টিভ বাক্য তৈরি গেম (Interactive Sentence Builder)
+                        </h3>
+                        <span class="text-xs bg-sakura-100 text-sakura-600 px-3 py-1 rounded-full font-bold whitespace-nowrap" id="builderTaskNum">টাস্ক ১/৩</span>
+                    </div>
+
+                    <p class="text-sm text-slate-600" id="builderTargetBengali"></p>
+
+                    <div class="min-h-[70px] p-4 bg-white/80 rounded-xl border-2 border-dashed border-sakura-300 flex flex-wrap items-center gap-2" id="assembledSentence">
+                        <span class="text-slate-400 text-sm italic" id="emptyPlaceholder">নিচের ব্লকগুলোতে ক্লিক করে সঠিক ক্রমে সাজান...</span>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2.5 pt-2" id="wordBlocks"></div>
+
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-2">
+                        <div id="builderFeedback" class="text-sm font-semibold min-h-[24px]"></div>
+                        <div class="flex gap-2">
+                            <button onclick="resetSentenceBuilder()" class="px-4 py-2 rounded-xl bg-slate-200 text-slate-700 hover:bg-slate-300 text-sm font-semibold transition">রিসেট</button>
+                            <button onclick="checkBuiltSentence()" class="px-5 py-2 rounded-xl bg-sakura-500 text-white hover:bg-sakura-600 text-sm font-semibold shadow transition">যাচাই করুন</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/grammar.js"></script>
+</body>
+</html>

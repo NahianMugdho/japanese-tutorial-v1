@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>হোম – সহজে জাপানি শিখুন</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="text-slate-800 relative font-bengali" data-page="index">
+    <div class="sakura-container" id="sakuraContainer"></div>
+    <div class="relative z-10 flex flex-col min-h-screen" id="pageWrap">
+        <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+<section id="tab-home" class="space-y-6">
+                <div class="glass-card p-5 sm:p-6 rounded-2xl border border-sakura-200 space-y-2">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-800 font-japanese">日本語 <span class="text-sm align-middle px-3 py-1 rounded-full bg-sakura-500 text-white font-bengali">৩ মাস</span></h2>
+                    <p class="text-slate-600 text-sm">বাংলায় পড়ুন, শুনুন, লিখুন আর বলুন। জাপানি বাক্যক্রম (কর্তা → কর্ম → ক্রিয়া) বাংলার মতোই, তাই আপনি এগিয়ে আছেন।</p>
+                </div>
+                <div class="glass-card p-5 sm:p-6 rounded-2xl border border-sakura-200 space-y-3">
+                    <h3 class="text-lg font-bold text-slate-800">দৈনিক ৪৫ মিনিটের রুটিন</h3>
+                    <ol class="text-sm text-slate-700 space-y-2 list-decimal pl-5">
+                        <li><b>১০ মি.</b> কানা: কুইজ খেলুন, ৫টি অক্ষর ক্যানভাসে হাতে লিখুন।</li>
+                        <li><b>১৫ মি.</b> আজকের পাঠ: বাক্য জোরে পড়ুন, 🔊 শুনে নকল করুন।</li>
+                        <li><b>১৫ মি.</b> কথা: ৫টি বাক্য মাইকে বলুন (shadowing)। শেষে বাক্য না দেখে বলার চেষ্টা।</li>
+                        <li><b>৫ মি.</b> গতকালের পুনরাবৃত্তি।</li>
+                    </ol>
+                    <p class="text-xs text-slate-500">সত্যি কথা: ৩ মাসে আপনি নিজের পরিচয়, কেনাকাটা, পথ জিজ্ঞাসা, খাবার অর্ডারের মতো ছোট দৈনন্দিন কথোপকথন সামলাতে পারবেন। সাবলীল হতে হলে আসল মানুষের সঙ্গে কথা বলা ও NHK-র ফ্রি অডিও (www.nhk.or.jp/lesson/bengali) শোনা জরুরি।</p>
+                </div>
+                <div class="glass-card p-5 sm:p-6 rounded-2xl border border-sakura-200 space-y-3">
+                    <div class="flex items-center justify-between gap-2"><h3 class="text-lg font-bold text-slate-800">১২ সপ্তাহের পরিকল্পনা</h3><span id="weekCount" class="text-xs font-bold text-sakura-600"></span></div>
+                    <div class="h-2.5 rounded-full bg-sakura-100 overflow-hidden"><div id="weekBar" class="h-full bg-gradient-to-r from-sakura-500 to-sakura-300 transition-all duration-500" style="width:0%"></div></div>
+                    <div id="weekList" class="space-y-1"></div>
+                </div>
+            
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"><a href="kana.html" class="glass-card p-4 sm:p-5 rounded-2xl border border-sakura-200 hover:border-sakura-400 hover:shadow-lg hover:-translate-y-0.5 transition flex items-center gap-4"><div class="text-3xl w-12 h-12 flex-shrink-0 rounded-xl bg-sakura-100 flex items-center justify-center font-japanese">あ</div><div class="min-w-0"><h3 class="font-bold text-slate-800">বর্ণমালা ও লেখা</h3><p class="text-xs text-slate-500">হিরাগানা, কাতাকানা, ক্যানভাসে লেখা, কুইজ</p></div></a><a href="lessons.html" class="glass-card p-4 sm:p-5 rounded-2xl border border-sakura-200 hover:border-sakura-400 hover:shadow-lg hover:-translate-y-0.5 transition flex items-center gap-4"><div class="text-3xl w-12 h-12 flex-shrink-0 rounded-xl bg-sakura-100 flex items-center justify-center font-japanese">📘</div><div class="min-w-0"><h3 class="font-bold text-slate-800">NHK পাঠ ১–২৫</h3><p class="text-xs text-slate-500">ডায়ালগ, উচ্চারণ, ব্যাকরণ নোট</p></div></a><a href="grammar.html" class="glass-card p-4 sm:p-5 rounded-2xl border border-sakura-200 hover:border-sakura-400 hover:shadow-lg hover:-translate-y-0.5 transition flex items-center gap-4"><div class="text-3xl w-12 h-12 flex-shrink-0 rounded-xl bg-sakura-100 flex items-center justify-center font-japanese">🧩</div><div class="min-w-0"><h3 class="font-bold text-slate-800">ব্যাকরণ</h3><p class="text-xs text-slate-500">কণা কার্ড ও বাক্য-বিল্ডার</p></div></a><a href="flashcards.html" class="glass-card p-4 sm:p-5 rounded-2xl border border-sakura-200 hover:border-sakura-400 hover:shadow-lg hover:-translate-y-0.5 transition flex items-center gap-4"><div class="text-3xl w-12 h-12 flex-shrink-0 rounded-xl bg-sakura-100 flex items-center justify-center font-japanese">🃏</div><div class="min-w-0"><h3 class="font-bold text-slate-800">ফ্ল্যাশকার্ড</h3><p class="text-xs text-slate-500">২৪টি শব্দ, ফ্লিপ কার্ড</p></div></a><a href="quiz.html" class="glass-card p-4 sm:p-5 rounded-2xl border border-sakura-200 hover:border-sakura-400 hover:shadow-lg hover:-translate-y-0.5 transition flex items-center gap-4"><div class="text-3xl w-12 h-12 flex-shrink-0 rounded-xl bg-sakura-100 flex items-center justify-center font-japanese">📝</div><div class="min-w-0"><h3 class="font-bold text-slate-800">কুইজ</h3><p class="text-xs text-slate-500">১০টি প্রশ্ন, স্কোর</p></div></a><a href="speak.html" class="glass-card p-4 sm:p-5 rounded-2xl border border-sakura-200 hover:border-sakura-400 hover:shadow-lg hover:-translate-y-0.5 transition flex items-center gap-4"><div class="text-3xl w-12 h-12 flex-shrink-0 rounded-xl bg-sakura-100 flex items-center justify-center font-japanese">🗣</div><div class="min-w-0"><h3 class="font-bold text-slate-800">দৈনন্দিন কথা</h3><p class="text-xs text-slate-500">৪৪টি বাক্য, মাইকে বলুন</p></div></a><a href="games.html" class="glass-card p-4 sm:p-5 rounded-2xl border border-sakura-200 hover:border-sakura-400 hover:shadow-lg hover:-translate-y-0.5 transition flex items-center gap-4"><div class="text-3xl w-12 h-12 flex-shrink-0 rounded-xl bg-sakura-100 flex items-center justify-center font-japanese">🎮</div><div class="min-w-0"><h3 class="font-bold text-slate-800">মনে রাখার গেম</h3><p class="text-xs text-slate-500">৬টি গেম, XP ও স্ট্রিক</p></div></a></div></section>
+        </main>
+    </div>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

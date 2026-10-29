@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ফ্ল্যাশকার্ড – সহজে জাপানি শিখুন</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="text-slate-800 relative font-bengali" data-page="flashcards">
+    <div class="sakura-container" id="sakuraContainer"></div>
+    <div class="relative z-10 flex flex-col min-h-screen" id="pageWrap">
+        <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+<section id="tab-flashcards" class="space-y-6">
+                <div class="glass-card p-5 sm:p-6 rounded-2xl border border-sakura-200 flex flex-col sm:flex-row justify-between items-center gap-4">
+                    <div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-800">ভোকাবুলারি ফ্ল্যাশকার্ড (Vocabulary Flashcards)</h2>
+                        <p class="text-slate-600 text-sm mt-1">কার্ডে ক্লিক করে জাপানি শব্দ ও বাংলা অর্থ জানুন।</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="prevFlashcard()" class="p-3 rounded-xl bg-white shadow-sm border border-sakura-200 text-slate-700 hover:bg-sakura-50"><i class="fa-solid fa-chevron-left"></i></button>
+                        <span id="flashcardIndex" class="px-4 py-3 bg-white rounded-xl border border-sakura-200 text-sm font-bold text-slate-700 flex items-center">1 / 10</span>
+                        <button onclick="nextFlashcard()" class="p-3 rounded-xl bg-white shadow-sm border border-sakura-200 text-slate-700 hover:bg-sakura-50"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="flex overflow-x-auto gap-2 pb-1 scrollbar-none sm:justify-center" id="fcChips"></div>
+
+                <div class="max-w-md mx-auto h-72 perspective-1000 cursor-pointer" onclick="flipFlashcard()">
+                    <div id="flashcardInner" class="w-full h-full transform-style-3d relative rounded-3xl glass-card border-2 border-sakura-300 shadow-xl transition-transform duration-500">
+                        <div class="absolute inset-0 backface-hidden p-6 sm:p-8 flex flex-col justify-between items-center text-center bg-white/90 rounded-3xl">
+                            <span class="text-xs uppercase font-extrabold tracking-widest text-sakura-500 bg-sakura-100 px-3 py-1 rounded-full">JAPANESE WORD</span>
+                            <div class="space-y-2">
+                                <h3 id="fcJapanese" class="text-4xl sm:text-5xl font-bold font-japanese text-slate-800">お寺</h3>
+                                <p id="fcRomaji" class="text-slate-500 text-lg">Otera</p>
+                            </div>
+                            <p class="text-xs text-sakura-400 font-medium">অর্থ দেখতে ফ্লিপ করতে ক্লিক করুন <i class="fa-solid fa-rotate text-xs ml-1"></i></p>
+                        </div>
+                        <div class="absolute inset-0 backface-hidden rotate-y-180 p-6 sm:p-8 flex flex-col justify-between items-center text-center bg-gradient-to-br from-sakura-500 to-sakura-600 text-white rounded-3xl">
+                            <span class="text-xs uppercase font-extrabold tracking-widest text-white/80 bg-white/20 px-3 py-1 rounded-full">BENGALI MEANING</span>
+                            <div class="space-y-2">
+                                <h3 id="fcBengali" class="text-3xl sm:text-4xl font-bold">মন্দির / উপাসনালয়</h3>
+                                <p id="fcCategory" class="text-sakura-100 text-sm">স্থান সংক্রান্ত শব্দ</p>
+                            </div>
+                            <button onclick="event.stopPropagation(); playCurrentFlashcardAudio()" class="px-4 py-2 bg-white text-sakura-600 rounded-full text-xs font-bold shadow hover:bg-sakura-50 transition flex items-center gap-2">
+                                <i class="fa-solid fa-volume-high"></i> উচ্চারণ শুনুন
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center gap-2">
+                    <button onclick="markCard(false)" class="px-4 py-2 rounded-xl bg-rose-50 border border-rose-300 text-rose-700 hover:bg-rose-100 text-sm font-semibold transition">😅 কঠিন</button>
+                    <button onclick="markCard(true)" class="px-4 py-2 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-700 hover:bg-emerald-100 text-sm font-semibold transition">✅ মনে আছে</button>
+                    <button onclick="shuffleFlashcards()" class="px-4 py-2 rounded-xl bg-white border border-sakura-200 text-slate-700 hover:bg-sakura-50 text-sm font-semibold transition"><i class="fa-solid fa-shuffle mr-1"></i> এলোমেলো</button>
+                </div>
+                <p id="fcStatus" class="text-center text-sm font-semibold text-slate-600 min-h-[20px]"></p>
+                <p id="hardCount" class="text-center text-xs font-bold text-rose-500"></p>
+            </section>
+        </main>
+    </div>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/flashcards.js"></script>
+</body>
+</html>
